@@ -41,11 +41,15 @@ export class HomePage implements OnInit {
 
 
   ionViewWillEnter(){
-
+    this.taskService.getTasks().subscribe()
+    console.log(this.taskService.getData())
   }
 
   onCreateTask(){
-    console.log(this.form)
+    // console.log(this.form)
+    this.taskService.saveTask(this. form?.value) .subscribe ()
+    // method reset pour enlever les text formulaire automatiquement
+    this.form?. reset ( )
   }
 
 }
